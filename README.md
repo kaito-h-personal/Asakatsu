@@ -1,10 +1,4 @@
 # Asakatsu
-
-[ゼロからはじめるDocker(1) Dockerとは？ \| マイナビニュース](https://news.mynavi.jp/article/docker-1/)
-[Dockerをはじめからていねいに〜インストールとcentos起動・停止〜 - Qiita](https://qiita.com/umeee/items/cdf30e037a0ee66e8d10)
-[Dockerを使ってnginxのWebサーバを構築する - Qiita](https://qiita.com/umeee/items/a2f06a2196fc4d46e054)
-[DockerによるPHP開発環境構築（PHP + MySQL + Nginx） - Qiita](https://qiita.com/sitmk/items/f911be7ffa4f29293fd5)
-
 ■ スケジュール
 ・10:30〜30分程度
 ・特に日々のノルマはなく個人毎
@@ -50,3 +44,10 @@ https://qiita.com/MasahiroHarada/items/2597bd6973a45f92e1e8
 - docker-compose.ymlに全ての情報を詰め込まない
 - Dockerfileをうまく使う
 - 本番・検証ではdocker-compose.ymlで環境変数を投げたり起動したりすることはない
+
+## 参考URL
+
+- [ゼロからはじめるDocker(1) Dockerとは？ \| マイナビニュース](https://news.mynavi.jp/article/docker-1/)
+- [Dockerをはじめからていねいに〜インストールとcentos起動・停止〜 - Qiita](https://qiita.com/umeee/items/cdf30e037a0ee66e8d10)
+- [Dockerを使ってnginxのWebサーバを構築する - Qiita](https://qiita.com/umeee/items/a2f06a2196fc4d46e054)
+- [DockerによるPHP開発環境構築（PHP + MySQL + Nginx） - Qiita](https://qiita.com/sitmk/items/f911be7ffa4f29293fd5)
