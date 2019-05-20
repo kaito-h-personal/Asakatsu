@@ -5,9 +5,9 @@ services:
    ports:
      - 8080:80
    volumes:
-     - ./nginx_d/nginx.conf:/etc/nginx/conf.d/default.conf
+     - ./docker_files/nginx_d/nginx.conf:/etc/nginx/conf.d/default.conf
 
   php:
    image: php:fpm-alpine
    volumes:
-     - ./www_d/html:/var/www/html
+     - ./:/var/www/html
