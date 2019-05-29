@@ -6,7 +6,7 @@ services:
      - 8080:80
    volumes:
      #nginxの設定ファイルをインポートさせる
-     - ./nginx_d/default.conf.pre:/etc/nginx/conf.d/default.conf.pre
+     - ./docker_files/nginx_d/default.conf.pre:/etc/nginx/conf.d/default.conf.pre
    #default.confに環境変数$PJ_NAMEを読ませる
    environment:
      - PJ_NAME=${PJ_NAME}
@@ -17,8 +17,8 @@ services:
   app:
    build: ./php_d
    volumes:
-     #一つ上のディレクトリにマウント
-     - ../:/var/www/html
+     #カレントディレクトリにマウント
+     - ./:/var/www/html
 
   db:
    image: mysql:latest
