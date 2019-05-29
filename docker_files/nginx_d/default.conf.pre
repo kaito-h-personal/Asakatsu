@@ -3,7 +3,6 @@ server {
     # サーバの公開ディレクトリを指定
     # $document_rootの値になる
     root /var/www/html/${PJ_NAME}/public;
-    #root /var/www/html/My_Laravel_Project/public;
 
     # URIごとにどのファイルを配信するか設定(?)
     # URIのパスに対するファイル(静的コンテンツ)が存在すれば、そのファイル返す

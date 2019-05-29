@@ -7,10 +7,12 @@ services:
    volumes:
      #nginxの設定ファイルをインポートさせる
      - ./docker_files/nginx_d/default.conf.pre:/etc/nginx/conf.d/default.conf.pre
-   #default.confに環境変数$PJ_NAMEを読ませる(`>`で改行できる)
+   #default.confに環境変数$PJ_NAMEを読ませる
    environment:
      - PJ_NAME=${PJ_NAME}
-   command: /bin/sh -c "envsubst '$$PJ_NAME' < /etc/nginx/conf.d/default.conf.pre > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+   command:
+     /bin/sh -c "envsubst '$$PJ_NAME' < /etc/nginx/conf.d/default.conf.pre > 
+     /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
 
   app:
    build: ./docker_files/php_d
