@@ -8,7 +8,7 @@ export MYSQL_PASSWORD=password
 
 # (cd ~; ~ )でカレントディレクトリを変えずに、ディレクトリを移動して実行できる
 create:
-	./docker_files/create_local_env.sh
+	(cd docker_files; ./create_local_env.sh)
 
 up:
 	(cd docker_files; docker-compose up;)
