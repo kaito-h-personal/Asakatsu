@@ -6,18 +6,24 @@ export MYSQL_DATABASE=sample
 export MYSQL_USERNAME=user
 export MYSQL_PASSWORD=password
 
-# (cd ~; ~ )でカレントディレクトリを変えずに、ディレクトリを移動して実行できる
+cd docker_files
+
 create:
-	(cd docker_files; ./create_local_env.sh)
+	./create_local_env.sh
+	cd ../
 
 up:
-	(cd docker_files; docker-compose up;)
+	docker-compose up
+	cd ../
 
 upd:
-	(cd docker_files; docker-compose up -d;)
+	docker-compose up -d
+	cd ../
 
 start:
-	(cd docker_files; docker-compose start;)
+	docker-compose start
+	cd ../
 
 stop:
-	(cd docker_files; docker-compose stop;)
+	docker-compose stop
+	cd ../

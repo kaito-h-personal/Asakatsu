@@ -6,7 +6,7 @@ services:
      - 8080:80
    volumes:
      #nginxの設定ファイルをインポートさせる
-     - ./docker_files/nginx_d/default.conf.pre:/etc/nginx/conf.d/default.conf.pre
+     - ./nginx_d/default.conf.pre:/etc/nginx/conf.d/default.conf.pre
    #default.confに環境変数$PJ_NAMEを読ませる
    environment:
      - PJ_NAME=${PJ_NAME}
@@ -15,7 +15,7 @@ services:
      /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
 
   app:
-   build: ./docker_files/php_d
+   build: ./php_d
    volumes:
      #カレントディレクトリにマウント
      - ./:/var/www/html
