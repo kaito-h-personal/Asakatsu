@@ -17,8 +17,8 @@ services:
   app:
    build: ./php_d
    volumes:
-     #カレントディレクトリにマウント
-     - ./:/var/www/html
+     #一つ上のディレクトリにマウント
+     - ../:/var/www/html
 
   db:
    image: mysql:latest

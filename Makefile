@@ -6,24 +6,18 @@ export MYSQL_DATABASE=sample
 export MYSQL_USERNAME=user
 export MYSQL_PASSWORD=password
 
-cd docker_files
-
+#Makefileはcdを次の行に引き継がないので、&&で同じ行にする必要がある
 create:
-	./create_local_env.sh
-	cd ../
+	cd docker_files && ./create_local_env.sh
 
 up:
-	docker-compose up
-	cd ../
+	cd docker_files && docker-compose up
 
 upd:
-	docker-compose up -d
-	cd ../
+	cd docker_files && docker-compose up -d
 
 start:
-	docker-compose start
-	cd ../
+	cd docker_files && docker-compose start
 
 stop:
-	docker-compose stop
-	cd ../
+	cd docker_files && docker-compose stop
