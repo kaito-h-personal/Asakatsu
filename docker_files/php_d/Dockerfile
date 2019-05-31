@@ -1,7 +1,7 @@
 FROM php:fpm-alpine
 
-#read env
-ARG PJ_NAME
+#read env #不要
+#ARG PJ_NAME
 
 #install zip
 RUN apk update
