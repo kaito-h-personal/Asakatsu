@@ -15,7 +15,10 @@ services:
      /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
 
   app:
-   build: ./php_d
+   build:
+     context: ./php_d
+     args:
+      - PJ_NAME=${PJ_NAME} # Dockerfileに環境変数を渡す
    volumes:
      #一つ上のディレクトリにマウント
      - ../:/var/www/html

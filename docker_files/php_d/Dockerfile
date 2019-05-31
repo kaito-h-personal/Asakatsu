@@ -1,5 +1,8 @@
 FROM php:fpm-alpine
 
+#read env
+ARG PJ_NAME
+
 #install zip
 RUN apk update
 RUN apk add zip

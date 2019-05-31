@@ -1,6 +1,6 @@
 #!/bin/bash
-
-docker-compose up
+# cacheを使うとDockerfileのcompose等が行われないことがある
+docker-compose build --no-cache
 
 # Laravelプロジェクトのmysqlの設定
 # 本当はcコマンドを使いたかったが、マニュアル通り動かなかったので妥協...
