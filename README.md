@@ -1,3 +1,9 @@
+# How to 環境構築
+- clone後
+  - `make install`でコンテナ作成 & Laravelインストール
+- それ以降
+  - `make start`と`make stop`でコンテナ起動/終了
+
 # Asakatsu
 ■ スケジュール
 ・10:30〜30分程度
