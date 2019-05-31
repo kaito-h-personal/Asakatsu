@@ -7,8 +7,8 @@ export MYSQL_USERNAME=user
 export MYSQL_PASSWORD=password
 
 #Makefileはcdを次の行に引き継がないので、&&で同じ行にする必要がある
-create:
-	cd docker_files && ./create_local_env.sh
+install:
+	cd docker_files && ./install_laravel.sh
 
 up:
 	cd docker_files && docker-compose up
