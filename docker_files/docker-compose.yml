@@ -17,8 +17,8 @@ services:
   app:
    build:
      context: ./php_d
-     args:
-      - PJ_NAME=${PJ_NAME} # Dockerfileに環境変数を渡す
+     #args:
+     # - PJ_NAME=${PJ_NAME} # Dockerfileに環境変数を渡す
    volumes:
      #一つ上のディレクトリにマウント
      - ../:/var/www/html

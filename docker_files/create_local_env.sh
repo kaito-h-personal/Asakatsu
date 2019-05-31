@@ -1,6 +1,9 @@
 #!/bin/bash
 # cacheを使うとDockerfileのcompose等が行われないことがある
 docker-compose build --no-cache
+docker-compose up
+# install Laravel
+docker-compose run app composer create-project --prefer-dist laravel/laravel ${PJ_NAME}
 
 # Laravelプロジェクトのmysqlの設定
 # 本当はcコマンドを使いたかったが、マニュアル通り動かなかったので妥協...

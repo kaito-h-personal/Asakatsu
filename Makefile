@@ -21,3 +21,6 @@ start:
 
 stop:
 	cd docker_files && docker-compose stop
+
+rm:
+	cd docker_files && docker-compose rm
