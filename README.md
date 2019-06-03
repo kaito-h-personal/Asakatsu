@@ -1,9 +1,17 @@
 # How to 環境構築
-- clone後
+- `makeコマンド`は全て`Makefile`がある階層で実行する
+- このリポジトリのclone後
   - `make install`でコンテナ作成 & Laravelインストール
 - それ以降
   - `make start`と`make stop`でコンテナ起動/終了
 
+## 補足
+- `make install`で行うこと
+  - dockerのimageを作成
+  - コンテナを起動
+  - Laravelをインストールする
+  - Mysqlの環境設定
+***
 # Asakatsu
 ■ スケジュール
 ・10:30〜30分程度
