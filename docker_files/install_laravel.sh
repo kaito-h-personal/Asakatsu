@@ -3,7 +3,7 @@
 # cacheを使うとDockerfileのRUNが行われないことがある
 docker-compose build --no-cache
 
-# imageからコンテナを作成(起動はしない)
+# imageからコンテナを作成(起動はしない)(buildもしない)
 docker-compose up --no-build --no-start 
 
 # appコンテナ内からLaravelインストール
@@ -11,6 +11,7 @@ docker-compose run app composer create-project --prefer-dist laravel/laravel ${P
 
 # Laravelプロジェクトのmysqlの設定
 # 本当はsedのcコマンドを使いたかったが、マニュアル通り動かなかったので妥協...
+# (後方一致がなくなるだけなのでそこまで変わらない。もっといい方法があるかも)
 # ''で囲まれているので、改行の際にエスケープは不要
 sed -ie 's/DB_DATABASE=.*$/DB_DATABASE='${MYSQL_DATABASE}'/;
          s/DB_USERNAME=.*$/DB_USERNAME='${MYSQL_USERNAME}'/;
