@@ -1,7 +1,7 @@
 # How to 環境構築
 - `makeコマンド`は全て`Makefile`がある階層で実行する
 - このリポジトリのclone後
-  - `make install`でコンテナ作成 & Laravelインストール
+  - `make install`でコンテナ作成 & Laravelインストール(5分ぐらいかかる)
 - それ以降
   - `make start`と`make stop`でコンテナ起動/終了
 
