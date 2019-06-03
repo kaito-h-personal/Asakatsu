@@ -16,7 +16,7 @@ mysql_env_value=(${MYSQL_DATABASE} ${MYSQL_USERNAME} ${MYSQL_PASSWORD})
 for ((i = 0; i < ${#mysql_env_key[@]}; i++)){
     sed -ie 's/'${mysql_env_key[i]}'=.*$/'${mysql_env_key[i]}'='${mysql_env_value[i]}'/' ../${PJ_NAME}/.env
 }
-# 連想配列の方がスマートだが、bashをアップデートしないと連想配列を使えないようなので保留
+# 連想配列の方がスマートだが、bashをアップデートしないと連想配列を定義できないようなので検討中
 # C言語風のforループの方が良いと判断した
 
 # 以下没
