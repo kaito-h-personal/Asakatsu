@@ -26,3 +26,6 @@ stop:
 
 rm:
 	cd docker_files && docker-compose rm
+
+build:
+	cd docker_files && docker-compose build
