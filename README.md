@@ -3,8 +3,10 @@
 - このリポジトリのclone後
   - `make install`でコンテナ作成 & Laravelインストール(5分ぐらいかかる)
 - それ以降
-  - `make start`と`make stop`でコンテナ起動/終了
-- localhost:8080でアクセス
+  - `make start`と`make stop`でコンテナ起動/停止
+- コンテナを起動した状態でlocalhost:8080でアクセス
+- `make rm`で停止したコンテナを削除
+  - 削除した場合は`make up`でコンテナ作成&起動
 
 ## 補足
 - `make install`で行うこと
