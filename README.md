@@ -4,6 +4,7 @@
   - `make install`でコンテナ作成 & Laravelインストール(5分ぐらいかかる)
 - それ以降
   - `make start`と`make stop`でコンテナ起動/終了
+- localhost:8080でアクセス
 
 ## 補足
 - `make install`で行うこと
