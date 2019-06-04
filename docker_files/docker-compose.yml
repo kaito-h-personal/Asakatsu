@@ -3,7 +3,7 @@ services:
   web:
    image: nginx:alpine
    ports:
-     - 8080:80
+     - 8080:80 #左辺で指定したポートにアクセスすると、ポート80にフォワード
    volumes:
      #nginxの設定ファイルをインポートさせる
      - ./nginx_d/default.conf.pre:/etc/nginx/conf.d/default.conf.pre
