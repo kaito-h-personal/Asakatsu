@@ -31,7 +31,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
    ports:
-     - 3306:3306 #いる?
+     - 3306:3306
 
   kvs:
    image: redis:alpine
