@@ -6,4 +6,4 @@ docker-compose build --no-cache
 # imageからコンテナを作成(起動はしない)(buildもしない)
 docker-compose up --no-build --no-start 
 
-cp -f .env ../${PJ_NAME}/.env
+#cp -f .env ../${PJ_NAME}/.env
