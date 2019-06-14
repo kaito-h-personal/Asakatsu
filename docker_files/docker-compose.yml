@@ -24,7 +24,7 @@ services:
      - ../:/var/www/html
 
   db:
-   image: mysql:latest
+   build: ./mysql_d
    environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USERNAME}
