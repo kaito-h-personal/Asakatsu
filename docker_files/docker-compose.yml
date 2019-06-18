@@ -3,11 +3,11 @@ services:
   web:
    image: nginx:alpine
    ports:
-     - 8080:80 #左辺で指定したポートにアクセスすると、ポート80にフォワード
+     - 8080:80 # 左辺で指定したポートにアクセスすると、ポート80にフォワード
    volumes:
-     #nginxの設定ファイルをインポートさせる
+     # nginxの設定ファイルをインポートさせる
      - ./nginx_d/default.conf.pre:/etc/nginx/conf.d/default.conf.pre
-   #default.confに環境変数$PJ_NAMEを読ませる
+   # default.confに環境変数$PJ_NAMEを読ませる
    environment:
      - PJ_NAME=${PJ_NAME}
    command:
@@ -17,10 +17,10 @@ services:
   app:
    build:
      context: ./php_d
-     #args: # (渡さなくなったので不要)
-     # - PJ_NAME=${PJ_NAME} # Dockerfileに環境変数を渡す
+     args:
+      - PJ_NAME=${PJ_NAME} # Dockerfileに環境変数を渡す
    volumes:
-     #一つ上のディレクトリにマウント
+     # 一つ上のディレクトリにマウント
      - ../:/var/www/html
 
   db:
