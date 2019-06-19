@@ -3,7 +3,7 @@
 # cacheを使うとDockerfileのRUNが行われないことがある
 docker-compose build --no-cache
 
-# imageからコンテナを作成(起動はしない)(buildもしない)
-docker-compose up --no-build --no-start 
+# imageからコンテナを作成(buildはしない)
+docker-compose up --no-build 
 
 #cp -f .env ../${PJ_NAME}/.env
