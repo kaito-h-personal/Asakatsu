@@ -22,8 +22,8 @@ services:
    volumes:
      # 一つ上のディレクトリにマウント
      - ../:/var/www/html
-   command:
-     cd ./${PJ_NAME} && composer require predis/predis
+   env_file: .env
+
   db:
    image: mysql:latest
    environment:
