@@ -1,27 +1,28 @@
 FROM php:fpm-alpine
 
-#read env
+# read env
 ARG PJ_NAME
 
-#install zip
-RUN apk update && \
-    apk add zip
+# install zip # この連結は公式推奨
+RUN apk update \
+ && apk add zip
 
-RUN echo $PJ_NAME
+RUN ls
 
-#install composer
-RUN curl -sS https://getcomposer.org/installer | php && \
-    mv ./composer.phar /usr/bin/composer && \
-    pwd
+# install composer
+RUN curl -sS https://getcomposer.org/installer | php \
+ && mv ./composer.phar /usr/bin/composer
 
-#install Laravel #コンテナを立ち上げた後(マウント後)に実行するよう変更
-#RUN composer create-project --prefer-dist laravel/laravel ${PJ_NAME}
+RUN pwd
 
-#laravelがredisと接続するために必要なライブラリ
-RUN cd ./$PJ_NAME && \
-    composer require predis/predis && pwd
+# laravelがredisと接続するために必要なライブラリ
+#RUN cd ./$PJ_NAME && \
+#RUN composer require predis/predis && pwd
 
-#MySQLにPDOで接続するときにMySQL用のプラグインが必要なので、インストール
+# MySQLにPDOで接続するときにMySQL用のプラグインが必要なので、インストール
 RUN docker-php-ext-install pdo_mysql
 
 RUN pwd
+
+CMD cd ./$PJ_NAME \
+ && composer require predis/predis && pwd
