@@ -7,22 +7,19 @@ ARG PJ_NAME
 RUN apk update \
  && apk add zip
 
-RUN ls
-
 # install composer
 RUN curl -sS https://getcomposer.org/installer | php \
  && mv ./composer.phar /usr/bin/composer
 
-RUN pwd
-
 # laravelがredisと接続するために必要なライブラリ
-#RUN cd ./$PJ_NAME && \
-#RUN composer require predis/predis && pwd
+#RUN cd ./$PJ_NAME \
+# && composer require predis/predis && pwd
 
 # MySQLにPDOで接続するときにMySQL用のプラグインが必要なので、インストール
 RUN docker-php-ext-install pdo_mysql
 
-RUN pwd
+#CMD ls && echo $PJ_NAME
 
-CMD cd ./$PJ_NAME \
- && composer require predis/predis && pwd
+#CMD cd ./$PJ_NAME \
+#  && touch $PJ_NAME.txt
+# && composer require predis/predis && pwd
