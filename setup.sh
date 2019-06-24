@@ -18,6 +18,6 @@ fi
 docker-compose run app cd ./${PJ_NAME} && composer require predis/predis
 
 # Laravelの.envを設定
-cp -f ./docker_files/laravel.env ./${PJ_NAME}/.env
+cp -f ./docker_files/env/laravel.env ./${PJ_NAME}/.env
 
 echo 'setup finished'
