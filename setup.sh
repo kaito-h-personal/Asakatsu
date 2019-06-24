@@ -9,7 +9,7 @@ docker-compose up -d
 # read env.
 . .env
 
-if[ ! -d "${}" ]; then
+if [ ! -d "${PJ_NAME}" ]; then
   echo 'Laravelをインストールします'
   docker-compose run app composer create-project --prefer-dist laravel/laravel ${PJ_NAME}
 fi
