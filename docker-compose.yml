@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
    image: nginx:alpine
+   container_name: "${PJ_NAME}_web"
    ports:
      - 8080:80 # 左辺で指定したポートにアクセスすると、ポート80にフォワード
    volumes:
@@ -19,6 +20,7 @@ services:
      context: ./docker_files/php_d
      args:
       - PJ_NAME=${PJ_NAME} # Dockerfileに環境変数を渡す
+   container_name: "${PJ_NAME}_app"
    volumes:
      # カレントディレクトリにマウント
      - ./:/var/www/html
@@ -26,6 +28,7 @@ services:
 
   db:
    image: mysql:latest
+   container_name: "${PJ_NAME}_db"
    environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USERNAME}
@@ -38,5 +41,6 @@ services:
 
   kvs:
    image: redis:alpine
+   container_name: "${PJ_NAME}_kvs"
    ports:
      - 6379:6379
