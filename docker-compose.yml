@@ -22,8 +22,8 @@ services:
       - PJ_NAME=${PJ_NAME} # Dockerfileに環境変数を渡す
    container_name: "${PJ_NAME}_app"
    volumes:
-     # カレントディレクトリにマウント
-     - ./:/var/www/html
+     # srcディレクトリにマウント
+     - ./src:/var/www/html
    env_file: .env #いる？
 
   db:
