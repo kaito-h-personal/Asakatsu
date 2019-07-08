@@ -24,7 +24,7 @@ services:
    volumes:
      # カレントディレクトリにマウント
      - ./:/var/www/html
-   env_file: .env
+   env_file: .env #いる？
 
   db:
    image: mysql:latest
@@ -35,7 +35,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
    volumes:
-     - ./docker_files/mysql_d:/docker-entrypoint-initdb.d
+     - ./docker_files/mysql_d/my.cnf:/etc/mysql/conf.d/my.cnf
    ports:
      - 3306:3306
 
