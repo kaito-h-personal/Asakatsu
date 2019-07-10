@@ -7,7 +7,7 @@ services:
      - 8080:80 # 左辺で指定したポートにアクセスすると、ポート80にフォワード
    volumes:
      # nginxの設定ファイルをインポートさせる
-     - ./docker_files/nginx_d/default.conf.pre:/etc/nginx/conf.d/default.conf.pre
+     - ./docker_files/nginx/default.conf.pre:/etc/nginx/conf.d/default.conf.pre
    # default.confに環境変数$PJ_NAMEを読ませる
    environment:
      - PJ_NAME=${PJ_NAME}
@@ -17,7 +17,7 @@ services:
 
   app:
    build:
-     context: ./docker_files/php_d
+     context: ./docker_files/php
      args:
       - PJ_NAME=${PJ_NAME} # Dockerfileに環境変数を渡す
    container_name: "${PJ_NAME}_app"
@@ -35,7 +35,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
    volumes:
-     - ./docker_files/mysql_d/my.cnf:/etc/mysql/conf.d/my.cnf
+     - ./docker_files/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
    ports:
      - 3306:3306
 
