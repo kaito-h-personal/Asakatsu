@@ -1,4 +1,4 @@
-FROM php:fpm-alpine
+FROM php:7.3.7-fpm-alpine3.10
 
 # read env
 ARG PJ_NAME
