@@ -8,7 +8,7 @@ docker-compose up -d
 # './setup.sh --install-pj'でlaravelプロジェクトをインストール
 if [ "$1" = "--install-pj" ]; then
   echo 'installing Laravel...'
-  docker-compose run app composer create-project --prefer-dist laravel/laravel ${PJ_NAME}
+  docker-compose run app composer create-project --prefer-dist laravel/laravel=5.8.24 ${PJ_NAME}
 fi
 
 # laravelがredisと接続するために必要なライブラリ
