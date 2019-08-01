@@ -1,14 +1,20 @@
 FROM php:7.3.7-fpm-alpine3.10
 
+ARG TZ='Asia/Tokyo'
+
 # read env
 ARG PJ_NAME
 
 RUN apk update \
- && apk add zip \
+ && apk add zip tzdata \
  && \
  : "install composer" \
  && curl -sS https://getcomposer.org/installer | php \
  && mv ./composer.phar /usr/bin/composer \
  && \
  : "MySQLにPDOで接続するときにMySQL用のプラグインが必要" \
- && docker-php-ext-install pdo_mysql
+ && docker-php-ext-install pdo_mysql \
+ && \
+ : "set timezones" \
+ && cp /usr/share/zoneinfo/${TZ} /etc/localtime \
+ && apk del tzdata
