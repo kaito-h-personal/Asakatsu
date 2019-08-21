@@ -2,9 +2,6 @@ FROM php:7.3.7-fpm-alpine3.10
 
 ARG TZ='Asia/Tokyo'
 
-# read env
-ARG PJ_NAME
-
 ENV LANG ja_JP.UTF-8
 
 RUN apk update \
