@@ -26,7 +26,6 @@ services:
    volumes:
      # srcディレクトリにマウント
      - ./src:/var/www/html
-   env_file: .env #いる？
    depends_on:
      - db
      - kvs
