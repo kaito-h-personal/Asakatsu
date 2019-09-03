@@ -1,2 +1,4 @@
+. .env
+
 docker-compose up -d
-docker-compose run app composer install
+docker-compose run --workdir="/var/www/html/${PJ_NAME}" app composer install
