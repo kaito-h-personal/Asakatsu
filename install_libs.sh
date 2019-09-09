@@ -1,3 +1,5 @@
+cp docker_files/env/laravel.env .env
+
 . .env
 
 docker-compose up -d
