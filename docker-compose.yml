@@ -23,7 +23,7 @@ services:
    container_name: "${PJ_NAME}_app"
    volumes:
      - ./src:/var/www/html
-     - ./docker_files/env/laravel.env:/var/www/html/${PJ_NAME}/.env
+     - ./docker_files/env/env_all:/var/www/html/${PJ_NAME}/.env
    depends_on:
      - db
      - imdb
