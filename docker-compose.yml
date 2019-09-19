@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
    image: nginx:1.17.1-alpine
-   container_name: "${PJ_NAME}_web"
+   #container_name: "${PJ_NAME}_web"
    ports:
      - 8080:80
    volumes:
@@ -20,7 +20,7 @@ services:
   app:
    build:
      context: ./docker_files/php
-   container_name: "${PJ_NAME}_app"
+   #container_name: "${PJ_NAME}_app"
    volumes:
      - ./src:/var/www/html
      - ./docker_files/env/env_all:/var/www/html/${PJ_NAME}/.env
@@ -30,7 +30,7 @@ services:
 
   db:
    image: mysql:8.0.16
-   container_name: "${PJ_NAME}_db"
+   #container_name: "${PJ_NAME}_db"
    environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME}
@@ -43,6 +43,6 @@ services:
 
   imdb:
    image: redis:5.0.5-alpine3.10
-   container_name: "${PJ_NAME}_imdb"
+   #container_name: "${PJ_NAME}_imdb"
    ports:
      - 6379:6379
