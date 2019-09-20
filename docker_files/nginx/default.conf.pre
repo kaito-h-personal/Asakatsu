@@ -4,6 +4,9 @@ server {
     # $document_rootの値になる
     root /var/www/html/${PJ_NAME}/public;
 
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
     # URIごとにどのファイルを配信するか設定(?)
     # URIのパスに対するファイル(静的コンテンツ)が存在すれば、そのファイル返す
     # 存在しなければ/index~に内部リダイレクトする(動的コンテンツ)
