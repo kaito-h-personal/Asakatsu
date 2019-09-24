@@ -21,7 +21,7 @@ services:
      context: ./docker_files/php
    volumes:
      - ./src:/var/www/html
-     # Laravelのenvファイル
+     # Laravelの設定ファイル
      - ./docker_files/env/env_all:/var/www/html/${PJ_NAME}/.env
    depends_on:
      - db
@@ -35,6 +35,7 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
    volumes:
+     # MySQLの設定ファイル
      - ./docker_files/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
    ports:
      - 3306:3306
